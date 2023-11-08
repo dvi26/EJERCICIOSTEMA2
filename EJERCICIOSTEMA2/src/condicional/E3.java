@@ -35,7 +35,7 @@ public class E3 {
 		kilosconsumidos=kilos/nA;
 		kilosnecesarios=CTotal/nA;
 		
-		if(nA<0 && kilos<0 && CTotal<0) {
+		if(nA<=0 && kilos<=0 && CTotal<=0) {
 		System.out.println("Algún dato introducido es erroneo (Menor que 0) ");
 		}
 		else if (kilosconsumidos>kilosnecesarios) {
