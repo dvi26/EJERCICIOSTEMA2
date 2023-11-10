@@ -39,26 +39,18 @@ public class E1 {
 		// incremento = scanner para introducir el numero con el teclado
 		segundosF=incremento+segundos;
 		
-		do {
+		while(segundosF>59) {
 		minutos++; 
 		contador++; 
 		segundosF=segundosF-60; 
-			}while(segundosF>59) ;
-		
+		}
 		while(minutos>59){
 			horas++; 
-			minutosF=minutos-60;
-		}
-		
-		while(minutosF>59){
-				horas++; 
-				minutosF=minutosF-60;
-		System.out.println("La hora será: " + horas + ":" + minutosF + ":" + segundosF );
-		
+			minutos=minutos-60;
 		}
 		System.out.println("La hora será: " + horas + ":" + minutos + ":" + segundosF );
 		sc.close();
-				}}
+	}}		
 			
 				
 	
