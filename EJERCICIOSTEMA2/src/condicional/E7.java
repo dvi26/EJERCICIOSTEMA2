@@ -30,8 +30,8 @@ public class E7 {
 		// segundos = scanner para introducir el numero con el teclado
 
 		
-		if(segundos>=60 || minutos>=60) {
-		System.out.println("Erro. 60 segundos es 1 minuto/60 minutos es 1 hora");	
+		if(segundos>=59 || minutos>=59) {
+		System.out.println("Error. 60 segundos es 1 minuto/60 minutos es 1 hora");	
 		}
 		else if(segundos==59 && minutos==59) {
 			segundos=0;
@@ -49,5 +49,6 @@ public class E7 {
 			segundos=segundos+1;
 			System.out.println("La hora será: " + horas + " horas " + minutos + " minutos " + segundos + " segundos " );
 			}
+		sc.close();
 		}
 }
