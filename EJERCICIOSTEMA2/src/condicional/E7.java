@@ -1,9 +1,8 @@
 package condicional;
 
 import java.util.Scanner;
-//ENTRADA: 32/59/59|| ESPERADO: La hora será: 33 horas 0 minutos 0 segundos  || OBTENIDO: La hora será: 33 horas 0 minutos 0 segundos     
-//ENTRADA: 32/12/59 || ESPERADO: La hora será: 32 horas 13 minutos 0 segundos  || OBTENIDO: La hora será: 32 horas 13 minutos 0 segundos  
-//ENTRADA: 32/60/60 || ESPERADO: Error || OBTENIDO: Error
+
+//ENTRADA: 12/59/59|| ESPERADO: 13/0/0  || OBTENIDO: 13/0/0    
 
 public class E7 {
 
@@ -28,27 +27,22 @@ public class E7 {
 		// System out para preguntar por los segundos
 		segundos = sc.nextInt();
 		// segundos = scanner para introducir el numero con el teclado
+		segundos++;
+		// sumo 1 a los segundos
 
-		
-		if(segundos>=59 || minutos>=59) {
-		System.out.println("Error. 60 segundos es 1 minuto/60 minutos es 1 hora");	
-		}
-		else if(segundos==59 && minutos==59) {
-			segundos=0;
-			minutos=0;
-			horas=horas+1;
-			System.out.println("La hora será: " + horas + " horas " + minutos + " minutos " + segundos + " segundos " );
-		}
-			
-			else if(segundos==59) {
-				segundos=0;
-				minutos=minutos+1;
-				System.out.println("La hora será: " + horas + " horas " + minutos + " minutos " + segundos + " segundos " );
-				
-			}else {
-			segundos=segundos+1;
-			System.out.println("La hora será: " + horas + " horas " + minutos + " minutos " + segundos + " segundos " );
-			}
+		 if (segundos==60) {
+			 segundos=0;
+	     minutos++;
+	     //Si los segundos llegan a 60, se ponen a 0 y se suma 1 minuto
+	        }
+	        if (minutos==60) {
+	            minutos=0;
+	            horas++;
+	      //Si los minutos llegan a 60, se ponen a 0 y se suma 1 hora
+	        }
+	        System.out.println("La hora sera: " + horas + " horas " + minutos + " minutos " + segundos + " segundos");
+	        //System out con la hora
 		sc.close();
+		//Cierro el scanner
 		}
 }

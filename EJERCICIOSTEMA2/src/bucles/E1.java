@@ -2,6 +2,8 @@ package bucles;
 
 import java.util.Scanner;
 
+//ENTRADA: 12:59:59 +1 || ESPERADO: 13:0:0  || OBTENIDO: 13:0:0 
+
 public class E1 {
 
 	public static void main(String[] args) {
@@ -13,10 +15,6 @@ public class E1 {
 		//Variable de los segundos
 		int incremento;
 		//Variable para el incremento
-		int segundosF;
-		//Variable para los segundos finales
-		int minutosF=0;
-		//Variable para los minutos finales
 		int contador=0;
 		//Variable para el contador
 		Scanner sc = new Scanner(System.in);
@@ -37,20 +35,24 @@ public class E1 {
 		// System out para preguntar por el incremento
 		incremento=sc.nextInt();
 		// incremento = scanner para introducir el numero con el teclado
-		segundosF=incremento+segundos;
-		
-		while(segundosF>59) {
-		minutos++; 
-		contador++; 
-		segundosF=segundosF-60; 
-		}
-		while(minutos>59){
-			horas++; 
-			minutos=minutos-60;
-		}
-		System.out.println("La hora será: " + horas + ":" + minutos + ":" + segundosF );
-		sc.close();
-	}}		
+		for (contador=0; contador<incremento;contador++) {
+            segundos++;
+            //For hasta que el contador sea mayor que el incremento, va sumando 1 al contador
+            if (segundos==60) {
+                minutos++;
+                segundos=0;
+                //Si los segundos llegan a 60, se suma un minuto y se ponen los segundo a 0
+            if (minutos==60) {
+                    horas++;
+                    minutos=0;
+                    //Si los minutos llegan a 60, se suma una hora y los minutos se ponen a 0
+            }}}
+        System.out.printf("La hora sera: " + horas + ":" + minutos + ":" + segundos);
+        //System out con la hora
+        sc.close();
+        //Cierro el scanner
+    }
+}
 			
 				
 	
